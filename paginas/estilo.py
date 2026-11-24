@@ -7,7 +7,11 @@ Sólo presentación: aquí no hay cálculos estadísticos.
 - Fotografías: static/fotos (Unsplash License, ver README). Se sirven sin internet desde /app/static.
 - Tipografías: IBM Plex Sans y IBM Plex Mono (SIL Open Font License), en static/fuentes.
 """
+import base64
+import functools
 import html
+import io
+import os
 import re
 
 import streamlit as st
@@ -323,8 +327,31 @@ def _md(t):
     return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", _e(t))
 
 
+_CARPETA_FOTOS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "static", "fotos")
+
+
+@functools.lru_cache(maxsize=None)
 def foto(nombre):
-    return f"{RUTA_FOTOS}/{nombre}.jpg"
+    """Fotografía incrustada (data URI JPEG, máx. 1000 px de ancho).
+
+    Se incrusta en lugar de enlazar a /app/static porque en Streamlit Community Cloud la app corre dentro de
+    un iframe y la ruta relativa app/static no siempre llega al archivo: la foto quedaba en negro."""
+    ruta = os.path.join(_CARPETA_FOTOS, f"{nombre}.jpg")
+    try:
+        from PIL import Image
+        im = Image.open(ruta).convert("RGB")
+        if im.width > 1000:
+            im = im.resize((1000, round(im.height * 1000 / im.width)), Image.LANCZOS)
+        buf = io.BytesIO()
+        im.save(buf, "JPEG", quality=74, optimize=True)
+        datos = buf.getvalue()
+    except Exception:  # noqa: BLE001
+        try:
+            with open(ruta, "rb") as f:
+                datos = f.read()
+        except OSError:
+            return f"{RUTA_FOTOS}/{nombre}.jpg"
+    return "data:image/jpeg;base64," + base64.b64encode(datos).decode("ascii")
 
 
 def _fondo(url):
