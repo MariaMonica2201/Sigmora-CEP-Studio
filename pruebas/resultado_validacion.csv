@@ -1,0 +1,53 @@
+﻿Ejemplo;Concepto;Valor en el módulo;Valor del software;¿Coincide?;Clasificación;Recálculo del módulo;Nota
+Cap. 3 ej. 1 (R̄=0,169, n=5);σ = R̄/d2;0,0726;0,072657;Sí;Coincide;;
+Cap. 3 ej. 1;Cp;0,9182;0,917554;Sí;Coincide;;
+Cap. 3 ej. 1;Cpu;0,7438;0,743219;Sí;Coincide;;
+Cap. 3 ej. 1;Cpl;1,09;1,09189;Sí;Coincide;;
+Cap. 3 ej. 1;%PNC por LSE;0,01287;0,012885;Sí;Coincide;;
+Cap. 3 ej. 1.c (centrado);%PNC total;0,00588;0,005872;Sí;Coincide;;
+Cap. 3 ej. 1.d;Ventana: X̄ máx;0,731;0,731107;Sí;Coincide;;
+Cap. 3 ej. 1.d;Ventana: X̄ mín;0,669;0,668893;Sí;Coincide;;
+Cap. 3 ej. 3 (75 ± 15);Cp;1,11;1,111111;Sí;Coincide;;
+Cap. 3 ej. 3;Cpu;0,9629;0,962963;Sí;Coincide;;
+Cap. 3 ej. 3;Cpl;1,2592;1,259259;Sí;Coincide;;
+Cap. 3 ej. 3;Ventana: X̄ máx;82,125;82,121913;Sí;Coincide;;
+Cap. 3 ej. 3;Ventana: X̄ mín;60,7875;67,878087;No;Error del material;67.878105;"El módulo plantea −1,75069 = (60 − X̄)/4,5, que da X̄ = 60 + 7,878 = 67,878. El 60,7875 escrito no sale de esa ecuación; además la ventana debe ser simétrica: 90 − 7,875 = 82,125 y 60 + 7,875 = 67,875."
+Ladrillos b);VEPNC con β = 0,05316 (3 muestras);16,95;16,957175;Sí;Coincide;;
+Ladrillos c);n para 1−β = 0,68377, d = 0,7;9,11;9,114079;Sí;Coincide;;
+Ladrillos c);β para detectar con 90 % en 2 muestras;0,31623;0,316228;Sí;Coincide;;
+Cap. 4.6;ARL0 con α = 0,0027;370,0;370,37037;Sí;Coincide;;
+Ladrillos b);1 − β (d = 0,65, n = 5, Z = 1,635);0,94684;0,427966;No;Error del material;0.427966;El módulo escribe Φ(0,65·√5 − 1,635) = Φ(1,615), pero 0,65·√5 = 1,453 y 1,453 − 1,635 = −0,18, así que 1 − β = Φ(−0,18) = 0,428. El 1,615 sale de 0,65·5 − 1,635 (se usó 5 en lugar de √5). La parte c) del mismo ejemplo sí usa √n (n = 9,11) y el software la reproduce.
+Carta p latas (Fase I);p̄;0,227;0,227;Sí;Coincide;;
+Carta p latas (Fase I);LCS;0,4256982;0,425698;Sí;Coincide;;
+Carta p latas (Fase I);LCI;0,0283018;0,028302;Sí;Coincide;;
+Carta p latas (tras cepillar 2 y 24);p̄;0,20543478;0,205435;Sí;Coincide;;
+Carta p latas (tras cepillar 2 y 24);LCS;0,39707781;0,397078;Sí;Coincide;;
+Carta p latas (tras cepillar 2 y 24);LCI;0,01379176;0,013792;Sí;Coincide;;
+Carta p módems (límites variables);p̄ = 856/38800;0,02206;0,022062;Sí;Coincide;;
+Carta p módems;LCS subgrupo 1 (n=2000);0,0372745;0,031915;No;Decisión de método;0.037275;La tabla del módulo centra cada límite en la p_i del propio subgrupo (0,0265 ± 3·√(0,0265·0,9735/2000)). El software usa p̄ = 856/38800, como la fórmula 4.8.1.2 (p̄ ± 3√(p̄(1−p̄)/n_i)). Con p_i cada punto queda siempre en el centro de sus propios límites y la carta nunca podría dar una señal.
+Carta np duraznos;LC = n·p̄;28,2;28,428571;Sí;Coincide;;El módulo muestra 21 envíos pero divide entre k = 25.
+Carta c circuitos;LCS;33,2108605;33,210861;Sí;Coincide;;
+Carta c circuitos;LCI;6,48144717;6,481447;Sí;Coincide;;
+Carta c circuitos (sin 6 y 20);c̄;19,67;19,666667;Sí;Coincide;;
+Carta c circuitos (sin 6 y 20);LCS;32,9708014;32,970801;Sí;Coincide;;
+Carta u computadoras;Ū;1,93;1,93;Sí;Coincide;;
+Carta u computadoras;LCS;3,79386695;3,793867;Sí;Coincide;;
+Carta u computadoras;LCI;0,06613305;0,066133;Sí;Coincide;;
+OC carta p (módulo 4.8.2);β con p = 0,01;0,08943531;0,089435;Sí;Coincide;;
+OC carta p;β con p = 0,05;0,72056825;0,720568;Sí;Coincide;;
+OC carta p;β con p = 0,3;0,85943972;0,85944;Sí;Coincide;;
+Carta p diseño, método 1;n (p = 0,01, γ = 0,95);300,0;299,573227;Sí;Coincide;;
+Carta p diseño, método 2;n (p = 0,01, p1 = 0,05, L = 3);56,0;55,6875;Sí;Coincide;;
+Carta p diseño, método 3;n (p = 0,05, L = 3);171,0;171,0;Sí;Coincide;;
+Cap. 5 plan n=50, c=3, p'=0,1;Pa binomial;0,25029;0,250294;Sí;Coincide;;
+Cap. 5 plan n=50, c=3, N=500;Pa hipergeométrica;0,235858;0,235858;Sí;Coincide;;
+Curva OC n = 80, c = 5;Pa con p' = 0.02;0,9945;0,994551;Sí;Coincide;;
+Curva OC n = 80, c = 5;Pa con p' = 0.06;0,6521;0,652163;Sí;Coincide;;
+Curva OC n = 80, c = 5;Pa con p' = 0.1;0,1769;0,176917;Sí;Coincide;;
+Plan doble (N=80, p=5 %);Pa;0,9604;0,984323;No;Decisión de método;0.960637;El software acepta en la 1ª muestra si d1 ≤ c1 = 1 (definición de c1 en 5.7.1 y ejemplo Ac/Re de la presentación) y toma la 2ª muestra del lote restante: N − n1 = 60 unidades con D − d1 defectuosos. El árbol del módulo envía d1 = 1 a la 2ª muestra y calcula la 2ª muestra con el lote completo (80 unidades, 4 defectuosos), como si las primeras 20 piezas se devolvieran al lote.
+MIL-STD ej. 1 (60 000, NAC 2,5);n;500,0;500,0;Sí;Coincide;;
+MIL-STD ej. 1;Ac;21,0;21,0;Sí;Coincide;;
+CSP ej. (90 000, NAC 2,5);n;500,0;500,0;Sí;Coincide;;
+CSP ej.;Pa con AOQL 2 % (n=500, c=21);0,99939;0,999394;Sí;Coincide;;
+MIL-STD ej. 2 (1 000, NAC 0,10);n;200,0;125,0;No;Error del material;125.0;Lote 1 000, nivel II ⇒ letra J. En la tabla maestra (diapositiva 17), la celda J / 0,10 es una flecha ↓ y el primer plan debajo es K: n = 125, Ac = 0, Re = 1. El n = 200 del texto corresponde a la fila L, que es el plan de NAC 0,065.
+Diámetros (módulo 2.6);X̿;15,954;15,954;Sí;Coincide;;
